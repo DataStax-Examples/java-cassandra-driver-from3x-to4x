@@ -20,7 +20,7 @@ The purpose is to provide you an extended list of code samples with explicit nam
 ### Prerequisites
 
 * `Java` 11+
-* `Cassandra` installed locally **OR**  `Docker` *(we provide a `docker-compose.yaml`)*
+* `Cassandra` installed locally **OR**  `Docker` *(we provide you a working `docker-compose.yaml`)*
 * `Maven` to compile and eventually run the samples (OR your IDE)
 
 
@@ -38,7 +38,6 @@ docker-compose up -d
 
 You can execute each class with `maven` and or your favorite IDE. Each class will create everything needed each time `keyspace` and `tables`. The working tables will be empty in the beginning for not dropped.
 
-Sample for first class:
 ```
 cd example-3x
 mvn exec:java -D"exec.mainClass"="com.datastax.samples.SampleCode3x_CONNECT_ClusterShowMetaData"
@@ -52,7 +51,23 @@ If cassandra is running as a docker container and you want to have a cqlsh shell
 docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 ```
 
-### Schema Created
+## Samples
+
+| Description        | 3x           | 4x  |
+| ------------- |:-------------:|:-----:|
+| Connect to cluster and show keyspaces | [SampleCode3x_CONNECT_ClusterShowMetaData](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_ClusterShowMetaData.java) | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+| Sample Code             | v3x  | v4x  |
+| ----------------------- |:-------------:|-----:|
+| ClusterShowMetaData      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
+
+## Schema Created
 
 Proposed Schema ffor the different samaples above
 
