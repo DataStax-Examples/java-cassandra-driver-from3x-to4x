@@ -34,19 +34,22 @@ After cloning this repository you can start either you local instance of Cassand
 docker-compose up -d
 ```
 
-* **CQL Shell** 
+* **Run Samples** 
+
+You can execute each class with `maven` and or your favorite IDE. Each class will create everything needed each time `keyspace` and `tables`. The working tables will be empty in the beginning for not dropped.
+
+Sample for first class:
+```
+cd example-3x
+mvn exec:java -D"exec.mainClass"="com.datastax.samples.SampleCode3x_CONNECT_ClusterShowMetaData"
+```
+
+* **Data displayed with CQL Shell** 
 
 If cassandra is running as a docker container and you want to have a cqlsh shell please execute:
 
 ```
 docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
-```
-
-You can execute each class with `maven` and or your favorite IDE. Each class will create everything needed each time `keyspace` and `tables`. The working tables will be empty in the beginning for not dropped.
-
-Sample for first class
-```
-mvn exec:java -D"exec.mainClass"="com.datastax.samples.SampleCode3x_CONNECT_ClusterShowMetaData"
 ```
 
 ### Schema Created
