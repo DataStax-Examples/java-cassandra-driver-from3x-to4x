@@ -51,19 +51,11 @@ If cassandra is running as a docker container and you want to have a cqlsh shell
 docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 ```
 
-## Samples
+## Available codes
 
-| Description        | 3x           | 4x  |
-| ------------- |:-------------:|:-----:|
-| Connect to cluster and show keyspaces | [SampleCode3x_CONNECT_ClusterShowMetaData](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_ClusterShowMetaData.java) | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-| Sample Code             | v3x  | v4x  |
-| ----------------------- |:-------------:|-----:|
-| ClusterShowMetaData      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+|       3x        |       4x       |  Description        |
+| :-------------: |:-------------:|:---------------------|
+| [ShowMetaData3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_ClusterShowMetaData.java) | [ShowMetaData4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ClusterShowMetaData.java) |  Connect to cluster and show keyspaces |
 
 
 
