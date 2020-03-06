@@ -1,14 +1,18 @@
 # Java Driver Code Samples
 
-A list of standalone working class to illustrate one feature of the java driver. We implemented those for both driver 3.x (oss) and driver 4.x (merged drivers). 
+<img src="https://raw.githubusercontent.com/clun/java-cassandra-driver-from3x-to4x/master/example-3x/src/main/resources/cassandra_logo.png" height="120px" />
 
-Contributors:
-- Cedrick Lunven (@clun)
-- Eric Ramirez 
 
 ## Objectives
 
-We want to provide an extended list of code samples in a sample place with explicit names to speed up you devs with copy-paste.
+This repository contains a list of standalone classes illustrating each one dedicated feature of the *DataStax java driver*. The purpose is to provide you an extended list of code samples with explicit names to speed up you developments with copy-paste.
+
+We implemented those for both driver 3.x (oss) and driver 4.x
+
+## Contributors
+
+* [Cedrick Lunven](https://github.com/clun)
+* [Eric Ramirez](https://github.com/flightc) 
 
 
 ## Setup and Running
@@ -16,12 +20,15 @@ We want to provide an extended list of code samples in a sample place with expli
 ### Prerequisites
 
 * Java 11+
-* Cassandra installed locally *(we provide a `docker-compose` if you don't have cassandra installed)*
-* OR Docker if Cassandra is not installed locally, we provide a `docker-compose` if you don't have cassandra installed
+* **Cassandra installed locally** OR  Docker *(we provide a `docker-compose.yaml`)*
+* Maven to compile and eventually run the samples (OR your IDE)
+
 
 ### Running
 
-**Start Cassandra as a container:** After cloning this repository simply do
+** Start Cassandra ** 
+
+After cloning this repository you can start either you local instance of Cassandra with `$Cassandra_HOME/bin/cassandra` or with docker-compose.
 
 ```
 docker-compose up -d
