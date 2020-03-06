@@ -1,21 +1,18 @@
 package com.datastax.samples;
 
-import static com.datastax.samples.ExampleUtils.*;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import static com.datastax.samples.ExampleUtils.closeSessionAndCluster;
+import static com.datastax.samples.ExampleUtils.connect;
+import static com.datastax.samples.ExampleUtils.createKeyspace;
+import static com.datastax.samples.ExampleUtils.createTableUser;
+import static com.datastax.samples.ExampleUtils.truncateTable;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.PreparedStatement;
-import com.datastax.driver.core.ResultSet;
-import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
-import com.datastax.driver.core.querybuilder.QueryBuilder;
-import com.datastax.samples.dto.UserDto;
+import com.datastax.driver.core.SimpleStatement;
 
 /**
  * Sample codes using Cassandra OSS Driver 3.x
@@ -35,19 +32,11 @@ public class SampleCode3x_CRUD_00_GettingStarted implements ExampleSchema {
     /** Logger for the class. */
     private static Logger LOGGER = LoggerFactory.getLogger(SampleCode3x_CRUD_00_GettingStarted.class);
 
-    // This will be used as singletons for the sample
-    private static Cluster cluster;
-    private static Session session;
-    
-    // Prepare your statements once and execute multiple times 
-    private static PreparedStatement stmtCreateUser;
-    private static PreparedStatement stmtUpsertUser;
-    private static PreparedStatement stmtExistUser;
-    private static PreparedStatement stmtDeleteUser;
-    private static PreparedStatement stmtFindUser;
-    
     /** StandAlone (vs JUNIT) to help you running. */
     public static void main(String[] args) {
+        
+        Cluster cluster = null;
+        Session session = null;
         try {
             
             // === INITIALIZING ===
@@ -66,7 +55,7 @@ public class SampleCode3x_CRUD_00_GettingStarted implements ExampleSchema {
             
             // You can write you query as a String
             String queryInsert = "INSERT INTO users (email, firstname, lastname) VALUES (?,?,?) IF NOT EXISTS";
-            
+            //session.execute()
             
             
            

@@ -5,9 +5,9 @@
 
 ## Objectives
 
-This repository contains a list of standalone classes illustrating each one dedicated feature of the *DataStax java driver*. The purpose is to provide you an extended list of code samples with explicit names to speed up you developments with copy-paste.
+This repository contains a list of standalone classes illustrating each a dedicated feature of the *DataStax java driver*.
 
-We implemented those for both driver 3.x (oss) and driver 4.x
+The purpose is to provide you an extended list of code samples with explicit names to speed up you developments (with copy-paste). We implemented those for both driver 3.x *(previous oss)* and driver 4.x *(latest)*
 
 ## Contributors
 
@@ -19,14 +19,14 @@ We implemented those for both driver 3.x (oss) and driver 4.x
 
 ### Prerequisites
 
-* Java 11+
-* **Cassandra installed locally** OR  Docker *(we provide a `docker-compose.yaml`)*
-* Maven to compile and eventually run the samples (OR your IDE)
+* `Java` 11+
+* `Cassandra` installed locally **OR**  `Docker` *(we provide a `docker-compose.yaml`)*
+* `Maven` to compile and eventually run the samples (OR your IDE)
 
 
 ### Running
 
-** Start Cassandra ** 
+* **Start Cassandra** 
 
 After cloning this repository you can start either you local instance of Cassandra with `$Cassandra_HOME/bin/cassandra` or with docker-compose.
 
@@ -34,14 +34,20 @@ After cloning this repository you can start either you local instance of Cassand
 docker-compose up -d
 ```
 
-**Having CQLSH:** If cassandra is running as a docker container and you want to have a cqlsh shell please execute:
+* **CQL Shell** 
+
+If cassandra is running as a docker container and you want to have a cqlsh shell please execute:
 
 ```
 docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 ```
 
-Then you can execute each `SampleCode???` as a standalone class or eventually run with maven
+You can execute each class with `maven` and or your favorite IDE. Each class will create everything needed each time `keyspace` and `tables`. The working tables will be empty in the beginning for not dropped.
 
+Sample for first class
+```
+mvn exec:java -D"exec.mainClass"="com.datastax.samples.SampleCode3x_CONNECT_ClusterShowMetaData"
+```
 
 ### Schema Created
 
