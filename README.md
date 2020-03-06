@@ -55,7 +55,8 @@ docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 
 |       3x        |       4x       |  Description        |
 | :-------------: |:-------------:|:---------------------|
-| [ShowMetaData3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_ClusterShowMetaData.java) | [ShowMetaData4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ClusterShowMetaData.java) |  Connect to cluster and show keyspaces |
+| [ShowMetaData3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_ClusterShowMetaData.java) | [ShowMetaData4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ClusterShowMetaData.java) |  Connect to cluster then show keyspaces and metadata |
+| [CreateKeyspace3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_CreateKeyspace.java) | [CreateKeyspace4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_CreateKeyspace.java) |  Create the `killrvideo` keyspace using `SchemaBuilder` if not exist |
 
 
 
