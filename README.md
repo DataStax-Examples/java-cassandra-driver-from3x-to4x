@@ -51,13 +51,15 @@ If cassandra is running as a docker container and you want to have a cqlsh shell
 docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 ```
 
-## Available codes
+## Available codes and classes
 
 |       3x        |       4x       |  Description        |
 | :-------------: |:-------------:|:---------------------|
 | [ShowMetaData3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_ClusterShowMetaData.java) | [ShowMetaData4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ClusterShowMetaData.java) |  Connect to cluster then show keyspaces and metadata |
 | [CreateKeyspace3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_CreateKeyspace.java) | [CreateKeyspace4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_CreateKeyspace.java) |  Create the `killrvideo` keyspace using `SchemaBuilder` if not exist |
-
+| [CreateSchema3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_CreateSchema.java) | [CreateSchema4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_CreateSchema.java) |  Create all expected `table` and `type` in `killrvideo` keyspace if they don't exist |
+| [DropKeyspace3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_DropKeyspace.java) | [DropKeyspace4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DropKeyspace.java) |  Drop the `killrvideo` keyspace if existis using  `SchemaBuilder` |
+| [DropSchema3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_DropSchema.java) | [DropSchema4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DropSchema.java) |  Drop all  `table` and `type` in `killrvideo` keyspace if they exist |
 
 
 ## Schema Created
