@@ -67,20 +67,20 @@ docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 |       3x        |       4x       |  Description        |
 | :-------------: |:-------------:|:---------------------|
 | [GettingStarted3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_00_GettingStarted.java) | [GettingStarted4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_00_GettingStarted.java) |  First touch with executing queries |
-| [Simple3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_01_Simple.java) | [Simple4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_01_Simple.java) |  First touch with executing queries |
-| [Paging3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_02_Paging.java) | [Paging4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_02_Paging.java) |  First touch with executing queries |
-| [Batches3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_03_Batches.java) | [Batches4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_03_Batches.java) |  First touch with executing queries |
-| [ListSetMapUdt3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_04_ListSetMapAndUdt.java) | [ListSetMapUdt4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_04_ListSetMapAndUdt.java) |  First touch with executing queries |
-| [Json3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_05_Json.java) | [Json4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_05_Json.java) |  First touch with executing queries |
-| [Async3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_06_Async.java) | [Async4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_06_Async.java) |  First touch with executing queries |
-| [ObjectMapping3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_07_ObjectMapping.java) | [ObjectMapping4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_07_ObjectMapping.java) |  First touch with executing queries |
-| [Counter3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_08_Counters.java) | [Counter4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_08_Counters.java) |  First touch with executing queries |
-| [Lwt3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_09_LightweightTransactions.java) | [Lwt3x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_09_LightweightTransactions.java) |  First touch with executing queries |
-| [BlobAndCodec3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_10_BlobAndCodec.java) | [BlobAndCodec4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_10_BlobAndCodec.java) |  First touch with executing queries |
+| [Simple3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_01_Simple.java) | [Simple4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_01_Simple.java) |  Read, update, insert, delete operations using `QueryBuilder` |
+| [Paging3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_02_Paging.java) | [Paging4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_02_Paging.java) |  Illustrating FetchSize and how to retrieve page by page |
+| [Batches3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_03_Batches.java) | [Batches4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_03_Batches.java) |  Group statements within batches|
+| [ListSetMapUdt3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_04_ListSetMapAndUdt.java) | [ListSetMapUdt4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_04_ListSetMapAndUdt.java) |  Advanced types insertions with `list`, `set`, `map` but also `User Defined Type` |
+| [Json3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_05_Json.java) | [Json4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_05_Json.java) |  Work with columns or full record with `JSON` |
+| [Async3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_06_Async.java) | [Async4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_06_Async.java) |  Sample operations as Simple in `Asynchronous` way |
+| [ObjectMapping3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_07_ObjectMapping.java) | [ObjectMapping4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_07_ObjectMapping.java) | Map table record to Java POJO at driver level |
+| [Counter3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_08_Counters.java) | [Counter4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_08_Counters.java) |  Working with `counters` increment/decrement|
+| [Lwt3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_09_LightweightTransactions.java) | [Lwt4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_09_LightweightTransactions.java) |  Working for Lightweight transactions read-before-write|
+| [BlobAndCodec3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_10_BlobAndCodec.java) | [BlobAndCodec4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_10_BlobAndCodec.java) |  Working with `BLOB` and binary data but also how to create your own `CustomCodec` |
 
 ## Schema Created
 
-Proposed Schema ffor the different samaples above
+Proposed Schema for the different samaples above
 
 ```sql
 
@@ -192,8 +192,5 @@ CREATE TABLE IF NOT EXISTS files (
 
 
 ```
-
-## Sample code
-
 
 
