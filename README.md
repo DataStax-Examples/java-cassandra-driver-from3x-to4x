@@ -51,16 +51,32 @@ If cassandra is running as a docker container and you want to have a cqlsh shell
 docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 ```
 
-## Available codes and classes
+## Working with Schema
 
 |       3x        |       4x       |  Description        |
 | :-------------: |:-------------:|:---------------------|
 | [ShowMetaData3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_ClusterShowMetaData.java) | [ShowMetaData4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ClusterShowMetaData.java) |  Connect to cluster then show keyspaces and metadata |
 | [CreateKeyspace3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_CreateKeyspace.java) | [CreateKeyspace4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_CreateKeyspace.java) |  Create the `killrvideo` keyspace using `SchemaBuilder` if not exist |
-| [CreateSchema3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_CreateSchema.java) | [CreateSchema4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_CreateSchema.java) |  Create all expected `table` and `type` in `killrvideo` keyspace if they don't exist |
+| [CreateSchema3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_CreateSchema.java) | [CreateSchema4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_CreateSchema.java) |  Create `table` and `type` in `killrvideo` keyspace if they don't exist |
 | [DropKeyspace3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_DropKeyspace.java) | [DropKeyspace4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DropKeyspace.java) |  Drop the `killrvideo` keyspace if existis using  `SchemaBuilder` |
 | [DropSchema3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_DropSchema.java) | [DropSchema4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DropSchema.java) |  Drop all  `table` and `type` in `killrvideo` keyspace if they exist |
 
+
+## Executing Queries
+
+|       3x        |       4x       |  Description        |
+| :-------------: |:-------------:|:---------------------|
+| [GettingStarted3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_00_GettingStarted.java) | [GettingStarted4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_00_GettingStarted.java) |  First touch with executing queries |
+| [Simple3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_01_Simple.java) | [Simple4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_01_Simple.java) |  First touch with executing queries |
+| [Paging3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_02_Paging.java) | [Paging4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_02_Paging.java) |  First touch with executing queries |
+| [Batches3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_03_Batches.java) | [Batches4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_03_Batches.java) |  First touch with executing queries |
+| [ListSetMapUdt3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_04_ListSetMapAndUdt.java) | [ListSetMapUdt4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_04_ListSetMapAndUdt.java) |  First touch with executing queries |
+| [Json3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_05_Json.java) | [Json4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_05_Json.java) |  First touch with executing queries |
+| [Async3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_06_Async.java) | [Async4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_06_Async.java) |  First touch with executing queries |
+| [ObjectMapping3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_07_ObjectMapping.java) | [ObjectMapping4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_07_ObjectMapping.java) |  First touch with executing queries |
+| [Counter3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_08_Counters.java) | [Counter4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_08_Counters.java) |  First touch with executing queries |
+| [Lwt3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_09_LightweightTransactions.java) | [Lwt3x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_09_LightweightTransactions.java) |  First touch with executing queries |
+| [BlobAndCodec3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_10_BlobAndCodec.java) | [BlobAndCodec4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_10_BlobAndCodec.java) |  First touch with executing queries |
 
 ## Schema Created
 

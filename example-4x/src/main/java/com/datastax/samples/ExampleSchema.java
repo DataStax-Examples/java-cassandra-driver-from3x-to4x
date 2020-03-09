@@ -96,4 +96,10 @@ public interface ExampleSchema {
     String COMMENT_BY_USER_USERID      = COMMENT_BY_VIDEO_USERID;
     String COMMENT_BY_USER_COMMENT     = COMMENT_BY_VIDEO_COMMENT;
     
+    String FILES_TABLENAME             = "files";
+    String FILES_FILENAME              = "filename";
+    String FILES_EXTENSION             = "extension";
+    String FILES_UPLOAD                = "upload";
+    String FILES_BINARY                = "binary";
+    
 }

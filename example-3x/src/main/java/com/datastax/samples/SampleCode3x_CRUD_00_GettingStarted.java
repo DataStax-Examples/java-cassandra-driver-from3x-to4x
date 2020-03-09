@@ -9,10 +9,14 @@ import static com.datastax.samples.ExampleUtils.truncateTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.datastax.driver.core.BoundStatement;
 import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.ConsistencyLevel;
 import com.datastax.driver.core.PreparedStatement;
 import com.datastax.driver.core.Session;
 import com.datastax.driver.core.SimpleStatement;
+import com.datastax.driver.core.querybuilder.QueryBuilder;
+import com.google.common.collect.ImmutableMap;
 
 /**
  * Sample codes using Cassandra OSS Driver 3.x
@@ -53,14 +57,75 @@ public class SampleCode3x_CRUD_00_GettingStarted implements ExampleSchema {
             // Empty tables for tests
             truncateTable(session, USER_TABLENAME);
             
-            // You can write you query as a String
-            String queryInsert = "INSERT INTO users (email, firstname, lastname) VALUES (?,?,?) IF NOT EXISTS";
-            //session.execute()
+            /** 
+             * In this class we will focus only on INSERTING records in order  
+             * to detailled all the ways to interact with Cassandra.
+             **/
+
+            // #1. You can execute CQL queries as a String
+            session.execute(""
+                    + "INSERT INTO users (email, firstname, lastname) "
+                    + "VALUES ('clun@sample.com', 'Cedrick', 'Lunven')");
+            LOGGER.info("+ Insert as a String");
+            
+            // #2.a You should externalize variables using character '?'
+            session.execute(""
+                    + "INSERT INTO users (email, firstname, lastname) "
+                    + "VALUES (?,?,?)", "clun2@gmail.com", "Cedrick", "Lunven");
+            LOGGER.info("+ Insert and externalize var with ?");
+            
+            // #2.b You can also externalize variables setting a label like :name
+            session.execute(""
+                    + "INSERT INTO users (email, firstname, lastname) "
+                    + "VALUES (:e,:f,:l)", ImmutableMap.<String, Object>of(
+                                                "e", "clun3@gmail.com",
+                                                "f", "Cedrick", 
+                                                "l", "Lunven"));
+            LOGGER.info("+ Insert and externalize var with :labels");
+            
+            // #3. You query is marshalled as 'Statement'
+            // You can create it explicitely in order to override some parameters
+            // doc: https://docs.datastax.com/en/developer/java-driver/3.0/manual/statements/simple/
+            SimpleStatement statement = new SimpleStatement(""
+                    + "INSERT INTO users (email, firstname, lastname) "
+                    + "VALUES ('clun4@sample.com', 'Cedrick', 'Lunven')");
+            statement.setConsistencyLevel(ConsistencyLevel.ONE);
+            session.execute(statement);
+            LOGGER.info("+ Insert with explicit statements");
+            
+            // #4. You can use QueryBuilder to help you building your statements
+            // doc: https://docs.datastax.com/en/drivers/java/3.8/com/datastax/driver/core/querybuilder/QueryBuilder.html
+            session.execute(QueryBuilder.insertInto("users")
+                    .value("email", "clun5@gmail.com")
+                    .value("firstname", "Cedrick")
+                    .value("lastname", "Lunven"));
+            LOGGER.info("+ Insert with QueryBuilder");
+            
+            // #5.It is recommended to prepare your statements
+            // Prepare once, execute multiple times is much faster
+            // Use session.prepare(<your_query>)
+            // doc: https://docs.datastax.com/en/developer/java-driver/3.8/manual/statements/built/
+            
+            // 5.a Use '?' for parameters
+            // doc: https://docs.datastax.com/en/developer/java-driver/3.8/manual/statements/prepared/
+            PreparedStatement ps1 = session.prepare(""
+                    + "INSERT INTO users (email, firstname, lastname) "
+                    + "VALUES (?,?,?)");
+            BoundStatement bs1 = ps1.bind("clun6@gmail.com", "Cedrick", "Lunven");
+            session.execute(bs1);
+            LOGGER.info("+ Insert with preparing the statement");
+            
+            // 5.b To prepare statements with QueryBuilder, use 'bindMarker'
+            PreparedStatement ps2 = session.prepare(QueryBuilder.insertInto("users")
+                        .value("email", QueryBuilder.bindMarker())
+                        .value("firstname", QueryBuilder.bindMarker())
+                        .value("lastname", QueryBuilder.bindMarker()));
+            session.execute(ps2.bind("clun7@gmail.com", "Cedrick", "Lunven"));
+            LOGGER.info("+ Insert with PrepareStatements + QueryBuilder");
             
             
-           
-            
-            
+            // In next SAMPLES you will find everything with QueryBuidler and PreparedStatement
+            // Enjoy !!!
             
         } finally {
             closeSessionAndCluster(session, cluster);

@@ -18,10 +18,10 @@ import com.datastax.oss.driver.api.querybuilder.QueryBuilder;
  *  PRIMARY KEY (email)
  * );
  */
-public class SampleCode9x_CRUD_09_LightweightTransactions implements ExampleSchema {
+public class SampleCode4x_CRUD_09_LightweightTransactions implements ExampleSchema {
 
     /** Logger for the class. */
-    private static Logger LOGGER = LoggerFactory.getLogger(SampleCode9x_CRUD_09_LightweightTransactions.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(SampleCode4x_CRUD_09_LightweightTransactions.class);
     
     // This will be used as singletons for the sample
     private static CqlSession session;

@@ -195,4 +195,25 @@ public class ExampleUtils implements ExampleSchema {
         LOGGER.info("+ Table '{}' has been created (if needed).", COMMENT_BY_VIDEO_TABLENAME);
     }
     
+    /**
+     * CREATE TABLE IF NOT EXISTS files (
+     *  filename  text,
+     *  upload    timestamp,
+     *  extension text static,
+     *  binary    blob,
+     *  PRIMARY KEY((filename), upload)
+     * ) WITH CLUSTERING ORDER BY (upload DESC);
+     */
+    public static void createTableFiles(CqlSession session) {
+        session.execute(SchemaBuilder
+                .createTable(FILES_TABLENAME).ifNotExists()
+                .withPartitionKey(FILES_FILENAME, DataTypes.TEXT)
+                .withClusteringColumn(FILES_UPLOAD, DataTypes.TIMESTAMP)
+                .withStaticColumn(FILES_EXTENSION, DataTypes.TEXT)
+                .withColumn(FILES_BINARY, DataTypes.BLOB)
+                .withClusteringOrder(FILES_UPLOAD, ClusteringOrder.DESC)
+                .build());
+        LOGGER.info("+ Table '{}' has been created (if needed).", FILES_TABLENAME);        
+    }
+    
 }
