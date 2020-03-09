@@ -46,6 +46,13 @@
 			<version>${cassandra.driver.oss.version}</version>
 		</dependency>
 		
+		<!-- For Reactive Portion -->
+		<dependency>
+    		<groupId>io.projectreactor</groupId>
+    		<artifactId>reactor-core</artifactId>
+    		<version>3.3.3.RELEASE</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

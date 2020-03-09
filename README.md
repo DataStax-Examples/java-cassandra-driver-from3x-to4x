@@ -64,8 +64,8 @@ docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 
 ## Executing Queries
 
-|       3x        |       4x       |  Description        |
-| :-------------: |:-------------:|:---------------------|
+|       3x        |       4x      |  Description        |
+| :-------------  |:------------- |:---------------------|
 | [GettingStarted3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_00_GettingStarted.java) | [GettingStarted4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_00_GettingStarted.java) |  First touch with executing queries |
 | [Simple3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_01_Simple.java) | [Simple4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_01_Simple.java) |  Read, update, insert, delete operations using `QueryBuilder` |
 | [Paging3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_02_Paging.java) | [Paging4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_02_Paging.java) |  Illustrating FetchSize and how to retrieve page by page |
@@ -77,10 +77,10 @@ docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 | [Counter3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_08_Counters.java) | [Counter4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_08_Counters.java) |  Working with `counters` increment/decrement|
 | [Lwt3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_09_LightweightTransactions.java) | [Lwt4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_09_LightweightTransactions.java) |  Working for Lightweight transactions read-before-write|
 | [BlobAndCodec3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_10_BlobAndCodec.java) | [BlobAndCodec4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_10_BlobAndCodec.java) |  Working with `BLOB` and binary data but also how to create your own `CustomCodec` |
+| [N/A](#) | [Reactive4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_11_Reactive.java) |  Working with the Reactive API introduce in driver 4.x|
 
-## Schema Created
 
-Proposed Schema for the different samaples above
+For reference this is the working schema we used for queries
 
 ```sql
 
