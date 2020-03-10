@@ -18,7 +18,7 @@ public class CommentByUser extends Comment {
     
     /** Serial. */
     private static final long serialVersionUID = 1453554109222565840L;
-    
+     
     /**
      * Default constructor.
      */
