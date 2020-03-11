@@ -60,6 +60,8 @@ docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 | [CreateSchema3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_CreateSchema.java) | [CreateSchema4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_CreateSchema.java) |  Create `table` and `type` in `killrvideo` keyspace if they don't exist |
 | [DropKeyspace3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_DropKeyspace.java) | [DropKeyspace4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DropKeyspace.java) |  Drop the `killrvideo` keyspace if existis using  `SchemaBuilder` |
 | [DropSchema3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_DropSchema.java) | [DropSchema4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DropSchema.java) |  Drop all  `table` and `type` in `killrvideo` keyspace if they exist |
+| --- | [ConfigurationFile4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DriverConfigLoader.java) |  Drop all  `table` and `type` in `killrvideo` keyspace if they exist |
+| --- | [ProgrammaticConfig4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ProgrammaticConfiguration.java) |  Drop all  `table` and `type` in `killrvideo` keyspace if they exist |
 
 
 ## Executing Queries
@@ -77,8 +79,8 @@ docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 | [Counter3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_08_Counters.java) | [Counter4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_08_Counters.java) |  Working with `counters` increment/decrement|
 | [Lwt3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_09_LightweightTransactions.java) | [Lwt4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_09_LightweightTransactions.java) |  Working for Lightweight transactions read-before-write|
 | [BlobAndCodec3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_10_BlobAndCodec.java) | [BlobAndCodec4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_10_BlobAndCodec.java) |  Working with `BLOB` and binary data but also how to create your own `CustomCodec` |
-| [N/A](#) | [Reactive4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_11_Reactive.java) |  Working with the Reactive API introduce in driver 4.x|
-
+| [CloudAstra3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_ServiceCloudAstra.java) | [CloudAstra4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ServiceCloudAstra.java) |  Working with `BLOB` and binary data but also how to create your own `CustomCodec` |
+| --- | [Reactive4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_11_Reactive.java) |  Working with the Reactive API introduce in driver 4.x|
 
 For reference this is the working schema we used for queries
 
