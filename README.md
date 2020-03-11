@@ -60,8 +60,8 @@ docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 | [CreateSchema3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_CreateSchema.java) | [CreateSchema4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_CreateSchema.java) |  Create `table` and `type` in `killrvideo` keyspace if they don't exist |
 | [DropKeyspace3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_DropKeyspace.java) | [DropKeyspace4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DropKeyspace.java) |  Drop the `killrvideo` keyspace if existis using  `SchemaBuilder` |
 | [DropSchema3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_DropSchema.java) | [DropSchema4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DropSchema.java) |  Drop all  `table` and `type` in `killrvideo` keyspace if they exist |
-| --- | [ConfigurationFile4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DriverConfigLoader.java) |  Drop all  `table` and `type` in `killrvideo` keyspace if they exist |
-| --- | [ProgrammaticConfig4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ProgrammaticConfiguration.java) |  Drop all  `table` and `type` in `killrvideo` keyspace if they exist |
+| --- | [ConfigurationFile4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_DriverConfigLoader.java) |  Setup the driver using custom conf file and not default `application.conf` |
+| --- | [ProgrammaticConfig4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ProgrammaticConfiguration.java) |  Setup the driver in a programmatic way |
 
 
 ## Executing Queries
