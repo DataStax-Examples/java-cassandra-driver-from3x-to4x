@@ -33,6 +33,8 @@ import com.datastax.driver.core.utils.UUIDs;
  * 
  * @author Cedrick LUNVEN (@clunven)
  * @author Erick  RAMIREZ (@@flightc)
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CRUD_03_Batches implements ExampleSchema {
     

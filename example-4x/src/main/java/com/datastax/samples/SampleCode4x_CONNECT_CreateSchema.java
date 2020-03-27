@@ -35,6 +35,8 @@ public class SampleCode4x_CONNECT_CreateSchema implements ExampleSchema {
     
     /** StandAlone (vs JUNIT) to help you running. */
     public static void main(String[] args) {
+        LOGGER.info("Starting 'CreateSchema' sample...");
+        
         try (CqlSession cqlSession = CqlSession.builder()
                 .addContactPoint(new InetSocketAddress("127.0.0.1", 9042))
                 .withLocalDatacenter("datacenter1")

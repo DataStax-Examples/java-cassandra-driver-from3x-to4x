@@ -15,6 +15,10 @@ import com.datastax.driver.core.Session;
  * Pre-requisites:
  * - Cassandra running locally (127.0.0.1, port 9042)
  * - Keyspace killrvideo created {@link SampleCode3x_CONNECT_CreateKeyspace}
+ * 
+ * @author DataStax Developer Advocate Team
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CONNECT_DropSchema implements ExampleSchema {
     
@@ -23,6 +27,7 @@ public class SampleCode3x_CONNECT_DropSchema implements ExampleSchema {
     
     /** StandAlone (vs JUNIT) to help you running. */
     public static void main(String[] args) {
+        LOGGER.info("Starting 'DropSchema' sample...");
         
         try(Cluster cluster = Cluster.builder().addContactPoint("127.0.0.1").build()) {
             LOGGER.info("Connected to Cluster");

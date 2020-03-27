@@ -63,7 +63,8 @@ import com.datastax.samples.dto.VideoFormatDto;
  * - Remove a new tag (SET) in existing record
  * - Add a new tag (SET) in existing record
  * - Remove a new tag (SET) in existing record
-
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CRUD_04_ListSetMapAndUdt implements ExampleSchema {
 	

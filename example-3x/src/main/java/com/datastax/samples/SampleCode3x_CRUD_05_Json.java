@@ -25,6 +25,17 @@ import com.datastax.driver.core.utils.UUIDs;
 import com.datastax.driver.extras.codecs.json.JacksonJsonCodec;
 import com.datastax.samples.dto.VideoDto;
 
+/**
+ * Show how to work with JSON Statements for rows and columns.
+ *  
+ * Pre-requisites:
+ * - Cassandra running locally (127.0.0.1, port 9042)
+ * 
+ * @author Cedrick LUNVEN (@clunven)
+ * @author Erick  RAMIREZ (@@flightc)
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
+ */
 public class SampleCode3x_CRUD_05_Json implements ExampleSchema {
     
     /** Logger for the class. */

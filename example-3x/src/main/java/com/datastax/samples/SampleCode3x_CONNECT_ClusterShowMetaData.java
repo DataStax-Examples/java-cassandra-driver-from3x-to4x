@@ -8,11 +8,16 @@ import com.datastax.driver.core.Host;
 import com.datastax.driver.core.KeyspaceMetadata;
 import com.datastax.driver.core.Metadata;
 
-
 /**
  * Standalone class to log metadata of a running cluster.
  * 
- * We expect you to have a running Cassandra on 127.0.0.1 with default port 9042
+ * 
+ * Pre-requisites:
+ * - Cassandra running locally (127.0.0.1, port 9042)
+ * 
+ * @author DataStax Developer Advocate Team
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CONNECT_ClusterShowMetaData implements ExampleSchema {
     
@@ -21,6 +26,7 @@ public class SampleCode3x_CONNECT_ClusterShowMetaData implements ExampleSchema {
     
     /** StandAlone (vs JUNIT) to help you running. */
     public static void main(String[] args) {
+        LOGGER.info("Starting 'ClusterShowMetaData' sample...");
         
         /**
          * Connecting to the cluster using a single endpoint:

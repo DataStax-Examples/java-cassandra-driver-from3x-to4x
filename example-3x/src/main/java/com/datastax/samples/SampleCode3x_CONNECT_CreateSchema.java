@@ -16,10 +16,14 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 
 /**
- * Sample code to create tables, types and objects in a keyspace.
+ * Create keyspace killrvideo if needed and all tables, user defined types.
  * 
  * Pre-requisites:
  * - Cassandra running locally (127.0.0.1, port 9042)
+ * 
+ * @author DataStax Developer Advocate Team
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CONNECT_CreateSchema implements ExampleSchema {
     
@@ -28,6 +32,7 @@ public class SampleCode3x_CONNECT_CreateSchema implements ExampleSchema {
     
     /** StandAlone (vs JUNIT) to help you running. */
     public static void main(String[] args) {
+        LOGGER.info("Starting 'CreateSchema' sample...");
         
         try(Cluster cluster = Cluster.builder()
                 .addContactPoint("127.0.0.1")

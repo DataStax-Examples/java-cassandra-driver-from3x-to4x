@@ -29,11 +29,7 @@ import com.datastax.samples.codec.BytesArrayCodec;
 import com.datastax.samples.dto.FileDto;
 
 /**
- * Sample codes using Cassandra OSS Driver 3.x
- * 
- * Disclaimers:
- *  - Tests for arguments nullity has been removed for code clarity
- *  - Packaged as a main class for usability
+ * Show how to work with binary file, blob and how to create custom codec.s
  *  
  * Pre-requisites:
  * - Cassandra running locally (127.0.0.1, port 9042)
@@ -48,6 +44,8 @@ import com.datastax.samples.dto.FileDto;
  * 
  * @author Cedrick LUNVEN (@clunven)
  * @author Erick  RAMIREZ (@@flightc)
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CRUD_10_BlobAndCodec implements ExampleSchema {
 

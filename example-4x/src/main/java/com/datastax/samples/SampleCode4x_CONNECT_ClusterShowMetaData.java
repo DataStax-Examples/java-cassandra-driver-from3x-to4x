@@ -22,6 +22,7 @@ public class SampleCode4x_CONNECT_ClusterShowMetaData {
     
     /** StandAlone (vs JUNIT) to help you running. */
     public static void main(String[] args) {
+        LOGGER.info("Starting 'ClusterShowMetaData' sample...");
         
         try (CqlSession cqlSession = CqlSession.builder()
                 .addContactPoint(new InetSocketAddress("127.0.0.1", 9042))

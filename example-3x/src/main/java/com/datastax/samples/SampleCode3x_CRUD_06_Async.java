@@ -24,17 +24,15 @@ import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 
 /**
- * Sample codes using Cassandra OSS Driver 4.x
- * 
- * Disclaimers:
- *  - Tests for arguments nullity has been removed for code clarity
- *  - Packaged as a main class for usability
+ * Show how execute statements asynchronously and parse results.
  *  
  * Pre-requisites:
  * - Cassandra running locally (127.0.0.1, port 9042)
  * 
  * @author Cedrick LUNVEN (@clunven)
  * @author Erick  RAMIREZ (@@flightc)
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CRUD_06_Async implements ExampleSchema {
     

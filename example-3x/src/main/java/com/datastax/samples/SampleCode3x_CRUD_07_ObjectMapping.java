@@ -26,17 +26,15 @@ import com.datastax.samples.objectmapping.CommentByUser;
 import com.datastax.samples.objectmapping.CommentByVideo;
 
 /**
- * Sample codes using Cassandra OSS Driver 3.x
- * 
- * Disclaimers:
- *  - Tests for arguments nullity has been removed for code clarity
- *  - Packaged as a main class for usability
+ * Show how to map Objects to Cassandra tables relying on Annotations.
  *  
  * Pre-requisites:
  * - Cassandra running locally (127.0.0.1, port 9042)
  * 
  * @author Cedrick LUNVEN (@clunven)
  * @author Erick  RAMIREZ (@@flightc)
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CRUD_07_ObjectMapping implements ExampleSchema {
     

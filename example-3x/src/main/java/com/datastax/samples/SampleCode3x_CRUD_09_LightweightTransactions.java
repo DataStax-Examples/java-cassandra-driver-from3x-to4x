@@ -14,12 +14,15 @@ import com.datastax.driver.core.Session;
 import com.datastax.driver.core.querybuilder.QueryBuilder;
 
 /**
- * CREATE TABLE IF NOT EXISTS users (
- *  email      text,
- *  firstname  text,
- *  lastname   text,
- *  PRIMARY KEY (email)
- * );
+ * Show how to execute LWT (IF NOT EXISTS, nother IF) and parse wasApplied.
+ *  
+ * Pre-requisites:
+ * - Cassandra running locally (127.0.0.1, port 9042)
+ * 
+ * @author Cedrick LUNVEN (@clunven)
+ * @author Erick  RAMIREZ (@@flightc)
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CRUD_09_LightweightTransactions implements ExampleSchema {
 

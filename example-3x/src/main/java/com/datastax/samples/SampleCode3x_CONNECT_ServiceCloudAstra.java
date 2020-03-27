@@ -22,6 +22,10 @@ import com.datastax.driver.core.Session;
  * https://docs.datastax.com/en/developer/java-driver/3.8/manual/cloud/
  * 
  * 3. You need a java driver version 3.8
+ * 
+ * @author DataStax Developer Advocate Team
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CONNECT_ServiceCloudAstra implements ExampleSchema {
     
@@ -30,6 +34,7 @@ public class SampleCode3x_CONNECT_ServiceCloudAstra implements ExampleSchema {
     
     /** StandAlone (vs JUNIT) to help you running. */
     public static void main(String[] args) {
+        LOGGER.info("Starting 'ServiceCloudAstra' sample...");
         
         // Those are mandatory to connect to ASTRA
         final String ASTRA_ZIP_FILE = "/Users/cedricklunven/Downloads/secure-connect-killrvideo.zip";

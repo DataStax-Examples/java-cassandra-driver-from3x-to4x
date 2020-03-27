@@ -74,6 +74,13 @@ public class ExampleUtils implements ExampleSchema {
         }
     }
     
+   /**
+    * CREATE KEYSPACE killrvideo 
+    * WITH replication = 
+    *      {'class': 'SimpleStrategy', 
+    *       'replication_factor': '1'}  
+    * AND durable_writes = true;
+    */ 
     public static void createKeyspace() {
         try(Cluster cluster = Cluster.builder().addContactPoint("127.0.0.1").build()) {
             createKeyspace(cluster);

@@ -30,6 +30,8 @@ import com.google.common.collect.ImmutableMap;
  * 
  * @author Cedrick LUNVEN (@clunven)
  * @author Erick  RAMIREZ (@@flightc)
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CRUD_00_GettingStarted implements ExampleSchema {
 
@@ -38,6 +40,7 @@ public class SampleCode3x_CRUD_00_GettingStarted implements ExampleSchema {
 
     /** StandAlone (vs JUNIT) to help you running. */
     public static void main(String[] args) {
+        LOGGER.info("Starting 'GettingStarted' sample...");
         
         Cluster cluster = null;
         Session session = null;

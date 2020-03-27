@@ -34,6 +34,8 @@ import com.datastax.driver.core.querybuilder.QueryBuilder;
  * 
  * @author Cedrick LUNVEN (@clunven)
  * @author Erick  RAMIREZ (@@flightc)
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CRUD_02_Paging implements ExampleSchema {
 

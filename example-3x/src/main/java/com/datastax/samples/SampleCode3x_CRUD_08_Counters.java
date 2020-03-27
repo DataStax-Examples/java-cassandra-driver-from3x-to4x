@@ -46,6 +46,8 @@ import com.datastax.driver.core.utils.UUIDs;
  * - Rows with counters cannot be inserted
  * - Updates are not idempotent
  * - Counters should not be used for precise values
+ * 
+ * Need Help ? Join us on community.datastax.com to ask your questions for free.
  */
 public class SampleCode3x_CRUD_08_Counters implements ExampleSchema {
 
