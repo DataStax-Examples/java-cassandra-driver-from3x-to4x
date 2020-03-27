@@ -6,7 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.ClusterWidePercentileTracker;
+import com.datastax.driver.core.PercentileTracker;
 import com.datastax.driver.core.policies.ConstantReconnectionPolicy;
+import com.datastax.driver.core.policies.ConstantSpeculativeExecutionPolicy;
 import com.datastax.driver.core.policies.DCAwareRoundRobinPolicy;
 import com.datastax.driver.core.policies.DefaultRetryPolicy;
 import com.datastax.driver.core.policies.ExponentialReconnectionPolicy;
@@ -14,9 +17,11 @@ import com.datastax.driver.core.policies.FallthroughRetryPolicy;
 import com.datastax.driver.core.policies.LatencyAwarePolicy;
 import com.datastax.driver.core.policies.LoadBalancingPolicy;
 import com.datastax.driver.core.policies.LoggingRetryPolicy;
+import com.datastax.driver.core.policies.PercentileSpeculativeExecutionPolicy;
 import com.datastax.driver.core.policies.ReconnectionPolicy;
 import com.datastax.driver.core.policies.RetryPolicy;
 import com.datastax.driver.core.policies.RoundRobinPolicy;
+import com.datastax.driver.core.policies.SpeculativeExecutionPolicy;
 import com.datastax.driver.core.policies.TokenAwarePolicy;
 
 /**
@@ -92,12 +97,35 @@ public class SampleCode3x_CONNECT_Policies implements ExampleSchema {
         LOGGER.info("[Reconnection] - {}", reconnConst.toString());
         
         
+        /**
+         * Speculative
+         * https://docs.datastax.com/en/developer/java-driver/3.8/manual/speculative_execution/
+         */
+        
+        /* 
+         * Constant
+         * - delay before a new execution is launched
+         * - maximum number of executions
+         */
+        SpeculativeExecutionPolicy seConstantPolicy = new ConstantSpeculativeExecutionPolicy(500, 2);
+        LOGGER.info("[SpeculativeExecution] - {}", seConstantPolicy.toString());
+        
+        /*
+         * Percentile based
+         * - percentile
+         * - maximum number of executions
+         */
+        PercentileTracker trackerCluster = ClusterWidePercentileTracker.builder(15000).build();
+        // PercentileTracker trackerHost = PerHostPercentileTracker.builder(1500).build();
+        SpeculativeExecutionPolicy sePercentilePolicy = new PercentileSpeculativeExecutionPolicy(trackerCluster, 99.0,2);
+        LOGGER.info("[SpeculativeExecution] - {}", sePercentilePolicy.toString());
         
         try(Cluster cluster = Cluster.builder()
                 .addContactPoint("127.0.0.1")
                 .withLoadBalancingPolicy(lbDefault)
                 .withRetryPolicy(retryDefault)
                 .withReconnectionPolicy(reconnExpo)
+                .withSpeculativeExecutionPolicy(sePercentilePolicy)
                 .build()) {
             LOGGER.info("Connected to Cluster");
         }
