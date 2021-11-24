@@ -1,6 +1,8 @@
 package com.datastax.samples;
 
 import java.net.InetSocketAddress;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +13,8 @@ import com.datastax.oss.driver.api.core.metadata.schema.ClusteringOrder;
 import com.datastax.oss.driver.api.core.type.DataTypes;
 import com.datastax.oss.driver.api.querybuilder.QueryBuilder;
 import com.datastax.oss.driver.api.querybuilder.SchemaBuilder;
+import com.datastax.oss.driver.api.querybuilder.insert.InsertInto;
+import com.datastax.oss.driver.api.querybuilder.insert.RegularInsert;
 
 /**
  * Code reused in multiple samples.
@@ -161,6 +165,8 @@ public class ExampleUtils implements ExampleSchema {
      * ) WITH CLUSTERING ORDER BY (commentid DESC);
      */
     public static void createTableCommentByUser(CqlSession session) {
+        
+        
         session.execute(SchemaBuilder
                 .createTable(COMMENT_BY_USER_TABLENAME)
                 .ifNotExists()
