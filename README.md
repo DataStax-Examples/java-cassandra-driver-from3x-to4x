@@ -1,27 +1,99 @@
 # Java Driver Code Samples
 
-<img src="https://raw.githubusercontent.com/clun/java-cassandra-driver-from3x-to4x/master/example-3x/src/main/resources/cassandra_logo.png" height="120px" />
+- *Latest V3 Driver*: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.datastax.cassandra/cassandra-driver-mapping/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.datastax.cassandra/cassandra-driver-mapping/)
 
+- *Latest V4 Driver*: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.datastax.oss/java-driver-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.datastax.oss/java-driver-core)
 
-## Objectives
+This repository contains a list of standalone classes illustrating each a dedicated feature of the *DataStax java driver*. The purpose is to provide you an extended list of code samples with explicit names to speed up you developments (with copy-paste). We implemented those for both driver 3.x *(previous oss)* and driver 4.x *(latest)*
 
-This repository contains a list of standalone classes illustrating each a dedicated feature of the *DataStax java driver*.
+## :clipboard: Table of content
 
-The purpose is to provide you an extended list of code samples with explicit names to speed up you developments (with copy-paste). We implemented those for both driver 3.x *(previous oss)* and driver 4.x *(latest)*
+1. [Prerequisites](#1-prerequisites)
+2. [Start Local Cluster](#2-start-local-cluster)
 
-## Contributors
+## 1. Prerequisites
 
-* [Cedrick Lunven](https://github.com/clun)
-* [Eric Ramirez](https://github.com/flightc) 
+#### 📦 Java Development Kit (JDK) 8
+- Use the [reference documentation](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html) to install a **Java Development Kit**
+- Validate your installation with
 
+```bash
+java --version
+```
 
-## Setup and Running
+#### 📦 Apache Maven
+- Use the [reference documentation](https://maven.apache.org/install.html) to install **Apache Maven**
+- Validate your installation with
 
-### Prerequisites
+```bash
+mvn -version
+```
 
-* `Java` 11+
-* `Cassandra` installed locally **OR**  `Docker` *(we provide you a working `docker-compose.yaml`)*
-* `Maven` to compile and eventually run the samples (OR your IDE)
+#### 📦 Docker (local Installation)
+
+Docker is an open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualization on Linux.
+
+<details>
+<summary><b><img src="https://github.com/DataStax-Academy/kubernetes-workshop-online/blob/master/4-materials/images/windows32.png?raw=true" height="24"/> To install on windows</b></summary>
+<a href="https://download.docker.com/win/stable/Docker%20Desktop%20Installer.exe">Docker Desktop for Windows Installer</a>
+</details>
+
+<details>
+<summary><b><img src="https://github.com/DataStax-Academy/kubernetes-workshop-online/blob/master/4-materials/images/mac32.png?raw=true" height="24"/> To install on MAC</b></summary>
+
+<a href="https://download.docker.com/mac/stable/Docker.dmg">Docker Desktop for MAC Installer</a> or <a href="https://download.docker.com/mac/stable/Docker.dmg">Homebrew</a>
+<pre>
+# Fetch latest version of homebrew and formula.
+brew update              
+# Tap the Caskroom/Cask repository from Github using HTTPS.
+brew tap caskroom/cask                
+# Searches all known Casks for a partial or exact match.
+brew search docker                    
+# Displays information about the given Cask
+brew cask info docker
+# Install the given cask.
+brew cask install docker              
+# Remove any older versions from the cellar.
+brew cleanup
+# Validate installation
+docker -v
+</pre>
+</details>
+
+![linux](https://github.com/DataStax-Academy/kubernetes-workshop-online/blob/master/4-materials/images/linux32.png?raw=true) : To install on linux (centOS) you can use the following commands
+```bash
+# Remove if already install
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+# Utils
+sudo yum install -y yum-utils
+
+# Add docker-ce repo
+sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+# Install
+sudo dnf -y  install docker-ce --nobest
+# Enable service
+sudo systemctl enable --now docker
+# Get Status
+systemctl status  docker
+
+# Logout....Lougin
+exit
+# Create user
+sudo usermod -aG docker $USER
+newgrp docker
+
+# Validation
+docker images
+docker run hello-world
+docker -v
+```
 
 
 ### Running
