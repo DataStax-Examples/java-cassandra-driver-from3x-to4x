@@ -40,7 +40,6 @@ Docker is an open-source project that automates the deployment of software appli
 
 <details>
 <summary><b><img src="https://github.com/DataStax-Academy/kubernetes-workshop-online/blob/master/4-materials/images/mac32.png?raw=true" height="24"/> To install on MAC</b></summary>
-
 <a href="https://download.docker.com/mac/stable/Docker.dmg">Docker Desktop for MAC Installer</a> or <a href="https://download.docker.com/mac/stable/Docker.dmg">Homebrew</a>
 <pre>
 # Fetch latest version of homebrew and formula.
@@ -60,8 +59,9 @@ docker -v
 </pre>
 </details>
 
-![linux](https://github.com/DataStax-Academy/kubernetes-workshop-online/blob/master/4-materials/images/linux32.png?raw=true) : To install on linux (centOS) you can use the following commands
-```bash
+<details>
+<summary><b><img src="https://github.com/DataStax-Academy/kubernetes-workshop-online/blob/master/4-materials/images/linux32.png?raw=true" height="24"/>To install on linux (centOS) you can use the following commands</b></summary>
+<pre>
 # Remove if already install
 sudo yum remove docker \
                   docker-client \
@@ -93,10 +93,11 @@ newgrp docker
 docker images
 docker run hello-world
 docker -v
-```
+</pre>
+</details>
 
 
-### Running
+## 2. Start Local Cluster
 
 * **Start Cassandra** 
 
