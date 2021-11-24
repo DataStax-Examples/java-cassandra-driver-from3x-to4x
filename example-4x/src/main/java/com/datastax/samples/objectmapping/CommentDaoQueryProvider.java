@@ -20,6 +20,7 @@ import com.datastax.samples.ExampleSchema;
  *
  * @author DataStax Developer Advocates team.
  */
+@SuppressWarnings("deprecation")
 public class CommentDaoQueryProvider implements CommentDao, ExampleSchema {
 
     private final CqlSession cqlSession;
@@ -58,6 +59,7 @@ public class CommentDaoQueryProvider implements CommentDao, ExampleSchema {
     }
     
     /** {@inheritDoc} */
+   
     @Override
     public PagingIterable<CommentByUser> retrieveUserComments(UUID userid) {
         return cqlSession.execute(selectCommentByUser.bind(userid)).map(helperUser::get);
