@@ -20,8 +20,8 @@ import com.datastax.oss.driver.api.querybuilder.QueryBuilder;
 import com.datastax.oss.driver.shaded.guava.common.collect.ImmutableMap;
 
 /**
- * Sample codes using Cassandra OSS Driver 3.x
- * 
+ * Sample codes using Cassandra OSS Driver 4.x
+ *
  * Disclaimers:
  *  - Tests for arguments nullity has been removed for code clarity
  *  - Packaged as a main class for usability

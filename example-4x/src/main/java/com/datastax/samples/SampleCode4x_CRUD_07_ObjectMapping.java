@@ -20,7 +20,7 @@ import com.datastax.samples.objectmapping.CommentDao;
 import com.datastax.samples.objectmapping.CommentDaoMapper;
 
 /**
- * Sample codes using Cassandra OSS Driver 3.x
+ * Sample codes using Cassandra OSS Driver 4.x
  * 
  * Disclaimers:
  *  - Tests for arguments nullity has been removed for code clarity
