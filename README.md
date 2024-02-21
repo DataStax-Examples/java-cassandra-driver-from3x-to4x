@@ -2,7 +2,7 @@
 
 - *Latest V3 Driver*: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.datastax.cassandra/cassandra-driver-mapping/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.datastax.cassandra/cassandra-driver-mapping/)
 
-- *Latest V4 Driver*: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.datastax.oss/java-driver-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.datastax.oss/java-driver-core)
+- *Latest V4 Driver*: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.datastax.oss/java-driver-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.apache.cassandra/java-driver-core)
 
 This repository contains a list of standalone classes illustrating each a dedicated feature of the *DataStax java driver*. The purpose is to provide you an extended list of code samples with explicit names to speed up you developments (with copy-paste). We implemented those for both driver 3.x *(previous oss)* and driver 4.x *(latest)*
 
@@ -121,7 +121,7 @@ mvn exec:java -D"exec.mainClass"="com.datastax.samples.SampleCode3x_CONNECT_Clus
 If cassandra is running as a docker container and you want to have a cqlsh shell please execute:
 
 ```
-docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
+docker exec -it `docker ps | grep cassandra:5 | cut -b 1-12` cqlsh
 ```
 
 ## Working with Schema
@@ -154,6 +154,7 @@ docker exec -it `docker ps | grep cassandra:3.11.5 | cut -b 1-12` cqlsh
 | [BlobAndCodec3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CRUD_10_BlobAndCodec.java) | [BlobAndCodec4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_10_BlobAndCodec.java) |  Working with `BLOB` and binary data but also how to create your own `CustomCodec` |
 | [CloudAstra3x](./example-3x/src/main/java/com/datastax/samples/SampleCode3x_CONNECT_ServiceCloudAstra.java) | [CloudAstra4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CONNECT_ServiceCloudAstra.java) |  Working with `BLOB` and binary data but also how to create your own `CustomCodec` |
 | --- | [Reactive4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_CRUD_11_Reactive.java) |  Working with the Reactive API introduce in driver 4.x|
+| --- | [Vector4x](./example-4x/src/main/java/com/datastax/samples/SampleCode4x_Vector.java) |  Working with the Reactive API introduce in driver 4.x|
 
 For reference this is the working schema we used for queries
 
