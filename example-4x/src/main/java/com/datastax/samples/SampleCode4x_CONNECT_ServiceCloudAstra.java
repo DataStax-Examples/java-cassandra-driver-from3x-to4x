@@ -43,21 +43,21 @@ public class SampleCode4x_CONNECT_ServiceCloudAstra implements ExampleSchema {
         final String ASTRA_KEYSPACE = "killrvideo";
         
         // Check the cloud zip file
-        File cloudSecureConnectBundleFile = new File(ASTRA_ZIP_FILE);
-        if (!cloudSecureConnectBundleFile.exists()) {
-            throw new IllegalStateException("File '" + ASTRA_ZIP_FILE + "' has not been found\n"
-                    + "To run this sample you need to download the secure bundle file from ASTRA WebPage\n"
-                    + "More info here:");
-        }
+        //File cloudSecureConnectBundleFile = new File(ASTRA_ZIP_FILE);
+        //if (!cloudSecureConnectBundleFile.exists()) {
+        //    throw new IllegalStateException("File '" + ASTRA_ZIP_FILE + "' has not been found\n"
+        //            + "To run this sample you need to download the secure bundle file from ASTRA WebPage\n"
+        //            + "More info here:");
+        //}
         
         // Connect
-        try (CqlSession cqlSession = CqlSession.builder()
-                .withCloudSecureConnectBundle(Paths.get(ASTRA_ZIP_FILE))
-                .withAuthCredentials(ASTRA_USERNAME, ASTRA_PASSWORD)
-                .withKeyspace(ASTRA_KEYSPACE)
-                .build()) {
-            LOGGER.info("[OK] Welcome to ASTRA. Connected to Keyspace {}", cqlSession.getKeyspace().get());
-        }
+        //try (CqlSession cqlSession = CqlSession.builder()
+        //        .withCloudSecureConnectBundle(Paths.get(ASTRA_ZIP_FILE))
+        //        .withAuthCredentials(ASTRA_USERNAME, ASTRA_PASSWORD)
+        //        .withKeyspace(ASTRA_KEYSPACE)
+        //        .build()) {
+        //    LOGGER.info("[OK] Welcome to ASTRA. Connected to Keyspace {}", cqlSession.getKeyspace().get());
+        //}
         
         // ----
         // #2. Delegating configuration parameters to dedicated file
