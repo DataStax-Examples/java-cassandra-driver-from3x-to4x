@@ -18,6 +18,8 @@
 
 		<!-- Project properties -->
 		<logback.version>1.5.0</logback.version>
+		<slf4j.version>2.0.12</slf4j.version>
+		<reactor-core.version>3.3.3.RELEASE</reactor-core.version>
 	</properties>
 
 	<dependencies>
@@ -28,12 +30,7 @@
 			<artifactId>java-driver-core</artifactId>
 			<version>${cassandra.driver.oss.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
-		
+
 		<!-- OPTIONAL DEPENDENCIES -->
 		<dependency>
 			<groupId>${cassandra.driver.groupId}</groupId>
@@ -45,12 +42,24 @@
 			<artifactId>java-driver-mapper-runtime</artifactId>
 			<version>${cassandra.driver.oss.version}</version>
 		</dependency>
-		
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+
 		<!-- For Reactive Portion -->
 		<dependency>
     		<groupId>io.projectreactor</groupId>
     		<artifactId>reactor-core</artifactId>
-    		<version>3.3.3.RELEASE</version>
+    		<version>${reactor-core.version}</version>
 		</dependency>
 		
 	</dependencies>

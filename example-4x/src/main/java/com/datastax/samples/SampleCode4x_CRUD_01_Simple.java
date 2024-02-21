@@ -165,7 +165,6 @@ public class SampleCode4x_CRUD_01_Simple implements ExampleSchema {
                 .value(USER_FIRSTNAME, QueryBuilder.bindMarker())
                 .value(USER_LASTNAME, QueryBuilder.bindMarker())
                 .ifNotExists().build());
-        // Using a - SLOW - lightweight transaction to check user existence
         stmtUpsertUser = session.prepare(QueryBuilder.insertInto(USER_TABLENAME)
                 .value(USER_EMAIL, QueryBuilder.bindMarker())
                 .value(USER_FIRSTNAME, QueryBuilder.bindMarker())
